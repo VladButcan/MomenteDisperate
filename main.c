@@ -44,7 +44,6 @@ void print(void *arr, int len) {
 	data->header = malloc(sizeof(head));
 	unsigned char type = 0;
 	int lenght = 0;
-	//if (len > 0) {
 	for (int z = 0; z < len; z++) {
 		type = *(unsigned char*)(arr + lenght);
 		printf("Tipul %d\n", type);
@@ -97,7 +96,6 @@ void print(void *arr, int len) {
 		}
 		printf("\n");
 	}
-	//}
 	free(data->header);
 	free(data);
 }
@@ -107,45 +105,36 @@ int add_at(void **arr, int *len, data_structure *data, int index) {
 		add_last(arr, len, data);
 		return 0;
 	}
-	//if (*len == 0) {
-		//add_last(arr, len, data);
-		//*len = *len + 1;
-	//} else {
-		unsigned int length1 = 0;
-		unsigned int length2 = 0;
-		for (int i = 0; i < *len; i++) {
-			length1 = length1 + 
-			sizeof(data->header->len) + sizeof(data->header->type);
+	unsigned int length1 = 0;
+	unsigned int length2 = 0;
+	for (int i = 0; i < *len; i++) {
+		length1 = length1 + 
+		sizeof(data->header->len) + sizeof(data->header->type);
 
-			length1 = length1 
-			+ *(unsigned int*)(*arr + length1 - sizeof(data->header->len));
-		}
-		int i = 0;
-		for (i = 0; i < index; i++) {
-			//if (i <= *len) {
-				length2 = length2 + 
-				sizeof(data->header->len) + sizeof(data->header->type);
+		length1 = length1 
+		+ *(unsigned int*)(*arr + length1 - sizeof(data->header->len));
+	}
+	int i = 0;
+	for (i = 0; i < index; i++) {
+		length2 = length2 + 
+		sizeof(data->header->len) + sizeof(data->header->type);
 
-				length2 = length2 + 
-				*(unsigned int*)(*arr + length2 - sizeof(data->header->len));
-			//} else {
-				//break;
-			//}
-		}
-		int size = sizeof(data->header->len) + sizeof(data->header->type);
-		*arr = realloc(*arr, length1 + data->header->len + size);
-		memcpy(*arr + length2 + data->header->len + size, 
-		*(arr + length2), length1 - length2);
+		length2 = length2 + 
+		*(unsigned int*)(*arr + length2 - sizeof(data->header->len));
+	}
+	int size = sizeof(data->header->len) + sizeof(data->header->type);
+	*arr = realloc(*arr, length1 + data->header->len + size);
+	memcpy(*arr + length2 + data->header->len + size, 
+	*(arr + length2), length1 - length2);
 
-		memcpy(*arr + length2, &data->header->type, 
-		sizeof(data->header->type));
+	memcpy(*arr + length2, &data->header->type, 
+	sizeof(data->header->type));
 
-		memcpy(*arr + length2 + sizeof(data->header->type), 
-		&(data->header->len), sizeof(data->header->len));
+	memcpy(*arr + length2 + sizeof(data->header->type), 
+	&(data->header->len), sizeof(data->header->len));
 
-		memcpy(*arr + length2 + size, data->data, data->header->len);
-		*len = *len + 1;
-	//}
+	memcpy(*arr + length2 + size, data->data, data->header->len);
+	*len = *len + 1;
 	return 0;
 }
 
