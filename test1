@@ -1,0 +1,8 @@
+gcc -o main main.o
+valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         ./main
+Makefile:17: recipe for target 'check' failed

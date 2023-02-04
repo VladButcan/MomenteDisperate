@@ -1,0 +1,65 @@
+                              Momente disperate
+    In cadrul temei date am avut de a lucra cu memoria si pointerii 
+de memorie.
+
+    Astfel pentru inceput am implementat funtia add_last care 
+adaga in finalul unui vector de date o noua zona de memorie.
+    In main am sortat, conform cerintei, tipurile adaugate pe 3 cazuri: 
+1, 2 si 3. Pentru tipul 1 am avut de lucrat cu date int de tipul int_8, 
+pentru cazul 2 cu int_16 si int 32, iar pentru cazul 3 am utilizat int_32.
+
+    Pentru a face codul putin mai eficient, am decis sa verific in 
+interiorul funtiei main daca primii 6 biti din comanda citita comparati 
+cu cuvantul "insert" sunt identici, dupa care mai fac o verificare 
+pentru a afla daca comanda este doar "insert" sau "insert _at".
+Atfel nu a fost nevoie sa rescriu tot codul de 2 ori.
+
+    Diferenta dintre aceste 2 functii: add_last si add_at consta in 
+faptul ca prima funtie aduga informatia primita ca parametru la finalul 
+vectorului pe cand cea e a doua o adauga pe o poziti anume in 
+vectorul general de date.
+
+    In continuare am iplementat functia delete_at care primeste ca parametri 
+vectorul de date pe cat si un index de unde se doreste stergerea.
+    Acel index circula prin vector cu ajutorul functie sizeof pe cat si 
+a infomatiei de lungime aflata pe pozitia 2 al ficarei zone de memorie.
+    Pentru a efectua o stergere am suprapus informatia aflata in vector 
+peste informatia pe care imi doresc sa o sterg dupa care avand o variabila 
+in care retin lungimea pe care vreu sa o sterg, realoc memoria 
+totala - lungimea retinuta.
+
+    Funtia find primeste ca parametru vectorul de date, lungimea lui 
+si un index de unde se vrea sa fie afisata inforatia.
+    Pentru implementarea functiei date am parcurs vectorul de date 
+pana la indexul de care am avut nevoie, dupa care am apelat functia print 
+avand ca parametri un pointer in vectorul de date de unde 
+imi doresc sa fac afisarea, si lungimea 1 pentru a afce afisarea unei singure 
+multimi de date.
+
+    Pentru verificarea corectitudinii tuturor funtiilor am implementat 
+funtia print care primeste ca parametri vecttoul de date si lungimea lui.
+    Functia data parcurge vectorul cu ajutorul functie sizeof, determina 
+tipul de date stocat (1, 2, 3), si lungimea ce va urma sa fie citita.
+    Conform fiecarui tip de date au fost implementate functii speciale 
+de castare a informatiei conform 8, 16, 32 biti.
+    Informatia a fost afisata intr-un format special oferit de problema.
+
+    In urma acestei teme m-am aprofunzit in cunoasterea lucrului cu pointerii 
+cat si in lucrul cu memoria.
+
+    In final, programul a fost folosit de Florin Copilul de Biti 
+pentru a nu-mi mai pierde clienti si pentru a nu mai pierde valutele, iar eu 
+inca pretind sa scot cea mai mentolata manea cat timp mai cant la 
+nunti si botezuri.
+
+
+Cu drag, manelistul vostru Bodocan Magnificul.
+
+
+
+
+Butcan Vlad
+
+butcanvlad10@gmail.com
+
++40763834822
